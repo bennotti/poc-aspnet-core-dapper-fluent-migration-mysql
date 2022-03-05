@@ -1,0 +1,7 @@
+src/.vs/
+src/**/obj/
+src/**/bin/
+devops/apis/certs/aspnetapp.pfx
+/.vs
+src/**/appsettings.*.json
+src/**/**/appsettings.*.json

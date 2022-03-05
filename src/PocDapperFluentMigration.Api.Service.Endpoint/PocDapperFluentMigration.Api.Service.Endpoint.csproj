@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+	  <GenerateDocumentationFile>True</GenerateDocumentationFile>
+	  <UserSecretsId>a0dcf651-fa28-4853-82c8-aacb450231fe</UserSecretsId>
+	  <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="6.2.3" />
+	</ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PocDapperFluentMigration.Api.Application\PocDapperFluentMigration.Api.Application.csproj" />
+    <ProjectReference Include="..\PocDapperFluentMigration.Shared.Api.Infrastructure\PocDapperFluentMigration.Shared.Api.Infrastructure.csproj" />
+    <ProjectReference Include="..\PocDapperFluentMigration.Api.Core\PocDapperFluentMigration.Api.Core.csproj" />
+    <ProjectReference Include="..\PocDapperFluentMigration.Shared.Core\PocDapperFluentMigration.Shared.Core.csproj" />
+  </ItemGroup>
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
+
+</Project>

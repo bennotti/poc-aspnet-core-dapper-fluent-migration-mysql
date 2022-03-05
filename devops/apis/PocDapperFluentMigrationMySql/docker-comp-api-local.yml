@@ -1,0 +1,42 @@
+version: "3.5"
+
+services:
+  poc_api_local_1:
+    container_name: poc_api_local_1
+    image: poc_api_local
+    hostname: localhost
+    network_mode: default
+    build:
+      context: ../../../src
+      dockerfile: ./PocDapperFluentMigration.Api.Service.Endpoint/Dockerfile
+    ports:
+      - 8860:80
+      - 8960:443
+    deploy:
+      resources:
+        limits:
+          cpus: "0.50"
+        reservations:
+          cpus: "0.25"
+      restart_policy:
+        condition: on-failure
+        max_attempts: 3
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+      - "dellpreto:192.168.1.108"
+    #   - "mysql:0.0.0.0"
+    #   - "redis:0.0.0.0"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Local
+      - ASPNETCORE_URLS=https://+;http://+
+      - ASPNETCORE_HTTPS_PORT=8960
+      - VIRTUAL_SCHEME=https
+      - VIRTUAL_PORT=8960
+      - VIRTUAL_HOST=host.docker.internal
+      - Kestrel:Certificates:Default:Path=/root/.aspnet/https/aspnetapp.pfx
+      - Kestrel:Certificates:Default:Password=devcertpass
+    volumes:
+      - ../certs:/root/.aspnet/https:ro,z
+networks:
+  default:
+    external: true

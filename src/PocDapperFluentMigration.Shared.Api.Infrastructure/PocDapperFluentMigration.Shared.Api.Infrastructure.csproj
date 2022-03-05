@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="Dapper" Version="2.0.123" />
+	  <PackageReference Include="Dapper.Contrib" Version="2.0.78" />
+	  <PackageReference Include="FluentMigrator.Runner" Version="3.3.2" />
+	  <PackageReference Include="FluentMigrator.Runner.MySql" Version="3.3.2" />
+	  <PackageReference Include="Microsoft.Extensions.Options" Version="3.1.22" />
+	  <PackageReference Include="MySql.Data" Version="8.0.27" />
+		<PackageReference Include="Microsoft.AspNetCore.Localization" Version="2.2.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
+		<PackageReference Include="Microsoft.AspNetCore.ResponseCompression" Version="2.2.0" />
+		<PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="3.1.22" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+	</ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PocDapperFluentMigration.Shared.Core\PocDapperFluentMigration.Shared.Core.csproj" />
+  </ItemGroup>
+
+</Project>
